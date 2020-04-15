@@ -15,6 +15,7 @@ function Repository({ match }) {
     const repoName = decodeURIComponent(match.params.repository);
 
     const buscarApi = async () => {
+        // eslint-disable-next-line no-shadow
         const [repository, issues] = await Promise.all([
             api.get(`/${repoName}`),
             api.get(`/${repoName}/issues`, {
